@@ -20,6 +20,8 @@ This program takes in three command line arguments: input text file, output DOT 
 
 IN TERMINAL
 ```c++
+    //NOTE: all cpp files must be compiled
+
     g++ main.cpp convex.cpp measure.cpp -o prog
     //will output runtime of selection sort as well as DOT file for points in grid.txt
     ./prog grid.txt convexhull.dot selectionSort
