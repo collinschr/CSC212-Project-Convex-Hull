@@ -7,6 +7,7 @@
 We recommend the use of VS Code or Visual Studio for running this program.
 ### Required
 Some sort of extension that allows for the use of DOT files.
+
 [This](https://marketplace.visualstudio.com/items?itemName=joaompinto.vscode-graphviz) is a great VS Code extension you can use for DOT files.
 
 ```bash
