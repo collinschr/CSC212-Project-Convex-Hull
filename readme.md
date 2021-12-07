@@ -1,6 +1,7 @@
 # Convex Hulls Project
 
-#Description
+# Description
+
 This program takes in a text file containing a set of points and uses the Graham Scan algorithm to determine a Convex Hull. It will output a DOT file containing the Convex Hull which you can visualize using an extension. 
 The DOT file will also contain the perimeter and area as well as the distance between each point.
 
