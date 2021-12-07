@@ -29,6 +29,7 @@ There must be at least three points in your grid.txt or you will not have a conv
 
 The write file does not automatically compute the bite size of the final point. You must manually enter that value.
 ```c++
+    // the '+5' here would be the bite size
     for(int i = 0; i < dotPoints->size()+5; i++)
         {
             // Loop points on convex hull
