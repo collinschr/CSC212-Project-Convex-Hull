@@ -72,8 +72,6 @@ This program can also be adapted into [SFML](https://www.sfml-dev.org/) to produ
 ## Contributing
 Please do not initiate any pull requests or attempt any edits.
 This project is complete.
-## Authors
-Ryan Fish, Christian Collins, Cristopher Quenes, Orion Joyner
 
 # Contributions
 
@@ -125,3 +123,5 @@ Orion Joyner
     Presentation home
     Assisted in with report and presentation
 ```
+## Authors
+Ryan Fish, Christian Collins, Cristopher Quenes, Orion Joyner
