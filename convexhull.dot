@@ -1,0 +1,24 @@
+digraph convexPoints {
+	subgraph cluster_0 {
+		style=filled;
+		color=grey;
+		node [style=filled,color=green,shape=diamond];
+		3.53192
+		label = "Perimeter"
+	}subgraph cluster_1 {
+		style=filled;
+		color=grey;
+		node [style=filled,color=red,shape=diamond];
+		0.828354
+		label = "Area"
+	}
+"Measure" -> "3.53192"
+"Measure" ->"0.828354""(-0.161921,-0.405534)" -> "(-0.440429,-0.289486)"[label = <<font color="green">0.301718</font>>]
+"(-0.440429,-0.289486)" -> "(-0.490737,0.186583)"[label = <<font color="green">0.478719</font>>]
+"(-0.490737,0.186583)" -> "(-0.352149,0.435266)"[label = <<font color="green">0.284693</font>>]
+"(-0.352149,0.435266)" -> "(0.050543,0.475493)"[label = <<font color="green">0.404696</font>>]
+"(0.050543,0.475493)" -> "(0.493217,0.492809)"[label = <<font color="green">0.443012</font>>]
+"(0.493217,0.492809)" -> "(0.49162,-0.345392)"[label = <<font color="green">0.838203</font>>]
+"(0.49162,-0.345392)" -> "(0.48239,-0.477617)"[label = <<font color="green">0.132547</font>>]
+"(0.48239,-0.477617)" -> "(-0.161921,-0.405534)"[label = <<font color="green">0.64833</font>>]
+}
