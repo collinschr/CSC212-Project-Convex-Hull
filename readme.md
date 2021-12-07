@@ -79,9 +79,10 @@ Ryan Fish, Christian Collins, Cristopher Quenes, Orion Joyner
 
 Code edits were sent via email and also worked off of single driver. Only the final minor edits as well as readme changes were pushed to GitHub.
 
+
+```c++
 Ryan Fish
 Main Methods and classes made
-```c++
     main
         WriteDot
         conversion_file
