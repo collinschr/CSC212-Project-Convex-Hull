@@ -136,6 +136,27 @@ void Convex::quickSortByAngle(int low, int high){
         quickSortByAngle(pi, high);
     }
 
+    for(int i = 1; i < points.size()-1; i++)
+    {
+        int minAngle;
+        minAngle = computeAngle(points[i].first, points[i].second);
+        // gets rid of duplicates
+        if(minAngle == computeAngle(points[i+1].first, points[i+1].second))
+        {
+            // compute distance
+            // whichever distance is smaller get rid of that point
+            if(sqrt(pow(points[i].first, 2) + pow(points[i].second, 2)) > 
+            sqrt(pow(points[i+1].first, 2) + pow(points[i+1].second, 2)))
+            {
+                points.erase(points.begin()+i+1);
+            }
+            else
+            {
+                points.erase(points.begin()+i);
+            }
+        }
+    }
+
 }
 
 
@@ -268,7 +289,8 @@ std::stack<std::pair<double, double> > * Convex::findConvex()
 
     // sort points by polar angle with P0,
     // if several points have the same polar angle then only keep the farthest
-    sortByAngle();
+    //sortByAngle();
+    quickSortByAngle(0, points.size() - 1);
 
     // test case to see if there are not enough points
     if(points.size() <= 3)

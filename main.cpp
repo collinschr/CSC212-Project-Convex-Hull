@@ -63,7 +63,7 @@ std::vector<double> * pConvex, double area){
     
     // point to subgraphs
     output_file << "\"Measure\" -> \""<<(*pConvex)[pConvex->size()-1] 
-    <<"\"\n\"Measure\" ->\""<< area <<"\"";
+    <<"\"\n\"Measure\" ->\""<< area <<"\"\n";
 
     // Loop rows
     for(int i = 0; i < dotPoints->size()+5; i++)
@@ -189,7 +189,6 @@ int main(int argc, char * argv[])
     // c.printVec();
     // std::cout << std::endl;
     // c.callSortByAngle();
-    c.callQuickSortByAngle();
     // c.printVec();
     // printPointsStack(c.findConvex());
     // c.findConvex();
