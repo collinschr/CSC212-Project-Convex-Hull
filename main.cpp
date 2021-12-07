@@ -173,6 +173,7 @@ int main(int argc, char * argv[])
     std::vector<std::pair<double, double>> points;
     std::string file_name = argv[1];
     std::string output_name = argv[2];
+    std::string choose_sorting = argv[3];
     std::stack<std::pair<double, double>> * convex_hull;
     std::vector<std::pair<double, double>> convexPoints;
     std::vector<double> * perimeter;
@@ -180,27 +181,18 @@ int main(int argc, char * argv[])
 
     conversion_file(file_name, &points);
 
-    // printPoints(&points);
+    
 
     Convex c = Convex(points);
-    // c.getCount_x();
-    // c.getCount_y();
-    // c.callTranslate();
-    // c.printVec();
-    // std::cout << std::endl;
-    // c.callSortByAngle();
-    // c.printVec();
-    // printPointsStack(c.findConvex());
-    // c.findConvex();
-    // std::cout << "x " << x << " and " << "y " << y << std::endl;
-    convex_hull = c.findConvex();
+
+    convex_hull = c.findConvex(choose_sorting);
     int x = c.getCount_x();
     int y = c.getCount_y();
 
     Measure m = Measure(*convex_hull);
     perimeter = m.getPerimeter();
     area = m.getArea();
-    // printPointsStack(convex_hull);
+
     
     WriteDot(output_name, convex_hull, x, y, perimeter, area);
 }

@@ -2,6 +2,7 @@
 #include <vector>
 #include <utility> // pair
 #include <stack>
+#include <ctime>
 
 class Convex{
     private:
@@ -49,5 +50,5 @@ class Convex{
         void callQuickSortByAngle();
 
         // final stack for convex hull
-        std::stack<std::pair<double, double> > * findConvex();
+        std::stack<std::pair<double, double> > * findConvex(std::string choose_sorting);
 };

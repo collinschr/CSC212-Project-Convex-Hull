@@ -2,6 +2,7 @@
 #include <vector>
 #include <utility> // pair
 #include <stack>
+#include <ctime>
 
 class Measure
 {

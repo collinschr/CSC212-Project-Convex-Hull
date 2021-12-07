@@ -1,6 +1,7 @@
 #include "convex.h"
 #include <math.h>
 
+
 // constructor
 Convex::Convex(std::vector<std::pair<double, double> > points)
 {
@@ -97,6 +98,8 @@ std::pair<double, double> Convex::nextToTop()
     hull.push(top);
     return next;
 }
+// first part of quickSort
+// establishes a partition and sorts it, will be used in main quickSort function
 int Convex::partition(int low, int high){
     int pi = low + (high - low) / 2;
     double pivot = computeAngle(points[pi].first, points[pi].second);
@@ -125,42 +128,6 @@ int Convex::partition(int low, int high){
 
     return i;
 }
-
-void Convex::quickSortByAngle(int low, int high){
-    if(low < high) {
-        
-        int pi = partition(low, high);
-
-        quickSortByAngle(low, pi - 1);
-
-        quickSortByAngle(pi, high);
-    }
-
-    for(int i = 1; i < points.size()-1; i++)
-    {
-        int minAngle;
-        minAngle = computeAngle(points[i].first, points[i].second);
-        // gets rid of duplicates
-        if(minAngle == computeAngle(points[i+1].first, points[i+1].second))
-        {
-            // compute distance
-            // whichever distance is smaller get rid of that point
-            if(sqrt(pow(points[i].first, 2) + pow(points[i].second, 2)) > 
-            sqrt(pow(points[i+1].first, 2) + pow(points[i+1].second, 2)))
-            {
-                points.erase(points.begin()+i+1);
-            }
-            else
-            {
-                points.erase(points.begin()+i);
-            }
-        }
-    }
-
-}
-
-
-
 
 
 // first part of algorithm
@@ -271,14 +238,47 @@ void Convex::sortByAngle()
     }
 }
 
+// quickSort function 
+// sorts both left and right side of partition
+void Convex::quickSortByAngle(int low, int high){
+    if(low < high) {
+        
+        int pi = partition(low, high);
+
+        quickSortByAngle(low, pi - 1);
+
+        quickSortByAngle(pi, high);
+    }
+
+    for(int i = 1; i < points.size()-1; i++)
+    {
+        int minAngle;
+        minAngle = computeAngle(points[i].first, points[i].second);
+        // gets rid of duplicates
+        if(minAngle == computeAngle(points[i+1].first, points[i+1].second))
+        {
+            // compute distance
+            // whichever distance is smaller get rid of that point
+            if(sqrt(pow(points[i].first, 2) + pow(points[i].second, 2)) > 
+            sqrt(pow(points[i+1].first, 2) + pow(points[i+1].second, 2)))
+            {
+                points.erase(points.begin()+i+1);
+            }
+            else
+            {
+                points.erase(points.begin()+i);
+            }
+        }
+    }
+
+}
 
 
 
 
 
 
-
-std::stack<std::pair<double, double> > * Convex::findConvex()
+std::stack<std::pair<double, double> > * Convex::findConvex(std::string choose_sorting)
 {
     // let points be the list of points (in class)
     // let stack = empty_stack()
@@ -291,6 +291,29 @@ std::stack<std::pair<double, double> > * Convex::findConvex()
     // if several points have the same polar angle then only keep the farthest
     //sortByAngle();
     quickSortByAngle(0, points.size() - 1);
+
+    unsigned long c_start, c_end;
+    // if user enters quickSort as an argument, program will run using quickSort
+    if (choose_sorting == "quickSort") {
+        c_start = std::clock();
+        quickSortByAngle(0,points.size() - 1);
+        c_end = std::clock();
+
+
+    }
+    // if user enters selectionSort as an argument, program will run using selectionSort
+    else if (choose_sorting == "selectionSort") {
+        c_start = std::clock();
+        sortByAngle();
+        c_end = std::clock();
+
+    }
+    // outputs runtime of chosen sorting function
+    float output = 1.0 * (c_end - c_start) / CLOCKS_PER_SEC;
+    std::cout <<"The runtime of "<<choose_sorting<<" is "<<output<<std::endl;
+    
+
+
 
     // test case to see if there are not enough points
     if(points.size() <= 3)
