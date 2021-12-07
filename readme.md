@@ -27,7 +27,20 @@ Your grid.txt file can look like this:
 ```
 There must be at least three points in your grid.txt or you will not have a convex hull.
 
-
+The write file does not automatically compute the bite size of the final point. You must manually enter that value.
+```c++
+    for(int i = 0; i < dotPoints->size()+5; i++)
+        {
+            // Loop points on convex hull
+            // dot file requires arrow and next
+            output_file << "\"(" << dotPoints->top().first - offX << "," <<  
+            dotPoints->top().second - offY << ")\"" << " -> ";
+            dotPoints->pop();
+            output_file << "\"(" << dotPoints->top().first - offX << "," <<  
+            dotPoints->top().second  - offY << ")\"";
+            output_file << "[label = <<font color=\"green\">" << (*pConvex)[i] << "</font>>]\n";
+        }
+```
 
 ## Usage
 This program takes in three command line arguments: input text file, output DOT file, and choice of either selectionSort or quickSort.
@@ -48,9 +61,14 @@ IN TERMINAL
     ./prog grid.txt convexhull.dot quickSort
 
 ```
+## Additional Notes
+This program was written with the use of Selection Sort in mind. Quick Sort was added as an additional feature afterward.
+grid.txt can be changed to use points of your liking, so long as there are 3 points, you will have a Convex Hull.
+convexhull.dot can also be cleared, as the program will write it.
+
 
 ## Contributing
 Please do not initiate any pull requests or attempt any edits.
 This project is complete.
-## Contributors
+## Authors
 Ryan Fish, Christian Collins, Cristopher Quenes, Orion Joyner
