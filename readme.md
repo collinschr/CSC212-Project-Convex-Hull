@@ -7,7 +7,7 @@ The DOT file will also contain the perimeter and area as well as the distance be
 
 ## Installation
 
-We recommend the use of VS Code and Visual Studio for running this program.
+We recommend the use of VS Code and/or Visual Studio for running this program.
 ### Required
 An extension that allows for the use of DOT files.
 
@@ -66,6 +66,7 @@ IN TERMINAL
 This program was written with the use of Selection Sort in mind. Quick Sort was added as an additional feature afterward.
 grid.txt can be changed to use points of your liking, so long as there are 3 points, you will have a Convex Hull.
 convexhull.dot can also be cleared, as the program will write it.
+This program can also be adapted into [SFML](https://www.sfml-dev.org/) to produce another visual.
 
 
 ## Contributing
