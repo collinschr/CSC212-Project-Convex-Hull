@@ -16,10 +16,13 @@ An extension that allows for the use of DOT files.
 ## Dependencies
 Your grid.txt file can look like this:
 ```c++
-    //commas and spaces are ignored
+    //characters outside of the parenthesis are ignored
+    //spaces are entirely ignored
     //different points can also be on the same line
     (251, 3739) (399, 3732)
     (251, 3739),
+
+    //each point must be in this format (point,point) (spaces inside do not matter)
     (251, 3739)
 ```
 There must be at least three points in your grid.txt or you will not have a convex hull.
