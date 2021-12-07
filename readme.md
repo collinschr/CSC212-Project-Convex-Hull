@@ -12,7 +12,8 @@ Some sort of extension that allows for the use of DOT files.
 
 
 ## Usage
-in terminal
+This program takes in three command line arguments: input text file, output DOT file, and choice of either selectionSort or quickSort
+In terminal
 ```c++
     g++ main.cpp convex.cpp measure.cpp -o prog
     //will output runtime of selection sort as well as DOT file for points in grid.txt
