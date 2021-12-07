@@ -74,3 +74,51 @@ Please do not initiate any pull requests or attempt any edits.
 This project is complete.
 ## Authors
 Ryan Fish, Christian Collins, Cristopher Quenes, Orion Joyner
+
+# Contributions
+
+Code edits were sent via email and also worked off of single driver. Only the final minor edits as well as readme changes were pushed to GitHub.
+
+Ryan Fish
+Main Methods and classes made
+    main
+        WriteDot
+        conversion_file
+    Convex.cpp
+        Translate
+        sortByAngle (selection sort)
+        findConvex
+        computeAngle
+        interiorAngle
+    Measure.cpp
+        getPerimeter
+    Assisted with report and presentation
+
+Christian Collins
+    Created repository and pushed code on github
+    Wrote readme.md
+    Main Program
+        Convex.cpp
+            Compute area function
+            Compute time 
+            quickSort
+            Comparing quicksort and selection
+        Graphs in report
+    Assisted with report and presentation 
+	
+Cristopher Quenes
+    Research
+        Researched and found real life points for the convex hull from a reliable source
+        Found other ways convex hulls is applied in other fields in the real world
+        Found graphs that elaborated the idea of convex hulls 
+    Assisted with report and presentation
+    Main Program
+        Assisted with troubleshooting quick & selection sort algorithm 
+        Points.txt
+
+Orion Joyner
+    SFML
+    Researched a way to help create a visual for the algorithm
+    Used multimedia platforms to help assist
+    Presentation home
+    Assisted in with report and presentation
